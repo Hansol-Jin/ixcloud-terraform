@@ -19,4 +19,6 @@ module "cluster" {
   vm1 = var.vm1
   vm2 = var.vm2
   vip = var.vip
+  zone_name = var.zone_name
+  tenant_ids = var.tenant_ids
 }

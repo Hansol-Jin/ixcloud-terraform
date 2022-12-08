@@ -18,3 +18,9 @@ variable "vm2" {
 variable "vip" {
   type    = string
 }
+variable "tenant_ids" {
+  type    = string
+}
+variable "zone_name" {
+  type    = string
+}

@@ -7,7 +7,10 @@ resource "openstack_compute_instance_v2" "haproxy_1" {
   name        = "private-haproxy-01"
   flavor_name = "2Core2GB"
   key_pair    = var.key
-
+  metadata = { "zone_name" = var.zone_name,
+               "tenant_id" = var.tenant_ids,
+               "os_type" = "linux"
+             }
   block_device {
     uuid	= data.openstack_images_image_v2.ubuntu_2004.id
     source_type	= "image"
@@ -39,6 +42,10 @@ resource "openstack_compute_instance_v2" "haproxy_2" {
   name        = "private-haproxy-02"
   flavor_name = "2Core2GB"
   key_pair    = var.key
+  metadata = { "zone_name" = var.zone_name,
+               "tenant_id" = var.tenant_ids,
+               "os_type" = "linux"
+             }
 
   block_device {
     uuid	= data.openstack_images_image_v2.ubuntu_2004.id
